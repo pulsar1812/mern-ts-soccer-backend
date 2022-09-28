@@ -1,6 +1,7 @@
 import { Schema, model } from 'mongoose'
 
 export interface Game {
+  name: string
   address: string
   numberOfPeople: number
   date: Date
@@ -9,6 +10,10 @@ export interface Game {
 }
 
 const GameSchema = new Schema<Game>({
+  name: {
+    type: String,
+    required: true,
+  },
   address: {
     type: String,
     required: true,
@@ -19,6 +24,10 @@ const GameSchema = new Schema<Game>({
   },
   date: {
     type: Date,
+    required: true,
+  },
+  time: {
+    type: String,
     required: true,
   },
   fieldNumber: {
