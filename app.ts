@@ -6,13 +6,13 @@ import gameRoute from './routes/game'
 
 const app: Application = express()
 app.use(express.json())
-
-// Import routes
+app.use(cors())
 
 app.get('/', (req: Request, res: Response) => {
   res.send({ message: 'It works' })
 })
 
+// Import routes
 app.use('/api', gameRoute)
 
 export default app
